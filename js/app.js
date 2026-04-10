@@ -28,6 +28,11 @@ class QRApp {
         this.setupEventListeners();
         this.updateDailyLimit();
         this.setLanguage(this.currentLang);
+        this.setupKeyboardShortcuts();
+        this.setupDragAndDrop();
+        this.trackSession();
+        this.checkFirstLoad();
+        this.requestPermissions();
     }
 
     waitForQRLib() {
@@ -41,27 +46,6 @@ class QRApp {
             };
             check();
         });
-    }
-
-            // Setup keyboard shortcuts
-            this.setupKeyboardShortcuts();
-
-            // Setup drag and drop
-            this.setupDragAndDrop();
-
-            // Setup session tracking
-            this.trackSession();
-
-            this.initialized = true;
-
-            // Show welcome notification on first load
-            this.checkFirstLoad();
-
-            // Request permissions (for PWA)
-            this.requestPermissions();
-        } catch (error) {
-            console.error('Application boot error:', error);
-        }
     }
 
     // ===== Daily Limit Management =====
