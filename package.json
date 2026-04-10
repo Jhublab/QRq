@@ -1,0 +1,53 @@
+{
+  "name": "qr-sys32-lt",
+  "version": "1.0.0",
+  "description": "Next-gen QR Code Generator - Fast, Private, Powerful",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "cd . && python -m http.server 8000",
+    "deploy": "wrangler pages deploy .",
+    "build": "echo 'No build step required - static files only'",
+    "lint": "echo 'Linting not configured'",
+    "test": "echo 'Testing not configured'"
+  },
+  "keywords": [
+    "qr-code",
+    "generator",
+    "qr",
+    "barcode",
+    "encoder",
+    "private",
+    "client-side"
+  ],
+  "author": "QR.SYS32.LT",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/qr-sys32-lt"
+  },
+  "homepage": "https://qr.sys32.lt",
+  "bugs": {
+    "url": "https://github.com/yourusername/qr-sys32-lt/issues"
+  },
+  "devDependencies": {
+    "@cloudflare/wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "staticFiles": {
+    "includePatterns": [
+      "**/*"
+    ],
+    "excludePatterns": [
+      "node_modules/**",
+      ".git/**",
+      ".gitignore",
+      "README.md",
+      "package.json",
+      "*.env"
+    ]
+  }
+}

@@ -1,0 +1,450 @@
+/* ============================================
+   GLOBAL STYLES - Base Colors, Fonts, Layout
+   ============================================ */
+
+:root {
+    /* Color Palette */
+    --primary-color: #00ff88;
+    --primary-glow: #00ff8855;
+    --secondary-color: #0088ff;
+    --secondary-glow: #0088ff55;
+    --accent-color: #ff0088;
+    --accent-glow: #ff008855;
+    --dark-bg: #0f0f23;
+    --darker-bg: #0a0a15;
+    --card-bg: #1a1a2e;
+    --card-light: #16213e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --border-color: #00ff8833;
+    --border-light: #ffffff11;
+    
+    /* Light Mode */
+    --light-primary: #e0e0e0;
+    --light-card: #ffffff;
+    --light-bg: #f5f5f5;
+    --light-text: #1a1a1a;
+    --light-text-secondary: #666666;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+    --shadow-glow-accent: 0 0 20px rgba(255, 0, 136, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+    
+    /* Font Sizes */
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-base: 16px;
+    --font-lg: 20px;
+    --font-xl: 24px;
+    --font-2xl: 32px;
+    --font-3xl: 48px;
+}
+
+/* Dark Mode (Default) */
+body {
+    --bg: var(--dark-bg);
+    --bg-secondary: var(--card-bg);
+    --text: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --border: var(--border-color);
+}
+
+/* Light Mode */
+body.light-mode {
+    --bg: var(--light-bg);
+    --bg-secondary: var(--light-card);
+    --text: var(--light-text);
+    --text-muted: var(--light-text-secondary);
+    --border: #e0e0e0;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ============================================
+   BACKGROUND EFFECTS
+   ============================================ */
+
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 20% 50%,
+        rgba(0, 255, 136, 0.05) 0%,
+        transparent 50%
+    ),
+    radial-gradient(
+        circle at 80% 80%,
+        rgba(0, 136, 255, 0.05) 0%,
+        transparent 50%
+    ),
+    radial-gradient(
+        circle at 40% 20%,
+        rgba(255, 0, 136, 0.03) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+    z-index: -2;
+}
+
+.animated-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+    animation: gridScroll 20s linear infinite;
+}
+
+@keyframes gridScroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+
+.main-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: var(--spacing-xl);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-2xl);
+}
+
+h2 {
+    font-size: var(--font-xl);
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ============================================
+   BUTTONS - BASE STYLES
+   ============================================ */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Primary Button */
+.primary-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--dark-bg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: var(--font-sm);
+    box-shadow: var(--shadow-glow);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    justify-content: center;
+}
+
+.primary-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
+.primary-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Secondary Button */
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border);
+    font-weight: 600;
+    font-size: var(--font-sm);
+    transition: all var(--transition-fast);
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background: var(--primary-glow);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   INPUTS & CONTROLS
+   ============================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text);
+    font-size: var(--font-base);
+    font-family: inherit;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(10px);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(0, 255, 136, 0.05);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: var(--radius-md);
+    background: var(--border);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    cursor: pointer;
+    box-shadow: var(--shadow-glow);
+    transition: all var(--transition-fast);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--shadow-glow);
+    transition: all var(--transition-fast);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 50px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+input[type="color"]:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   GLASSMORPHISM PANELS
+   ============================================ */
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all var(--transition-normal);
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* ============================================
+   SCROLL BEHAVIOR
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* ============================================
+   TEXT SELECTION
+   ============================================ */
+
+::selection {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+}

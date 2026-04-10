@@ -1,0 +1,643 @@
+/* ============================================
+   RESPONSIVE DESIGN - Mobile First
+   ============================================ */
+
+/* ============================================
+   TABLET SCREENS (768px - 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: var(--spacing-lg);
+    }
+
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .control-panel {
+        height: auto;
+    }
+
+    .header-banner {
+        padding: var(--spacing-lg) var(--spacing-lg);
+    }
+
+    .header-logo h1 {
+        font-size: var(--font-lg);
+    }
+
+    .header-tagline {
+        font-size: var(--font-xs);
+    }
+}
+
+/* ============================================
+   SMALL TABLETS (640px - 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 20px;
+        --spacing-2xl: 32px;
+        --font-xl: 20px;
+        --font-2xl: 28px;
+    }
+
+    .container {
+        padding: var(--spacing-lg);
+    }
+
+    .header-banner {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .header-content {
+        width: 100%;
+    }
+
+    .header-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .privacy-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-xs);
+    }
+
+    .qr-display-wrapper {
+        min-height: 280px;
+    }
+
+    .qr-panel,
+    .control-panel {
+        padding: var(--spacing-lg);
+    }
+
+    .input-type-tabs {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .tab-btn {
+        padding: var(--spacing-sm) var(--spacing-xs);
+        font-size: var(--font-xs);
+    }
+
+    .tab-btn span {
+        display: none;
+    }
+
+    .floating-actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .action-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-xs);
+    }
+
+    .share-buttons {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .history-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .size-presets,
+    .error-correction-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* ============================================
+   MOBILE PHONES (480px - 640px)
+   ============================================ */
+
+@media (max-width: 640px) {
+    :root {
+        --spacing-lg: 16px;
+        --spacing-xl: 16px;
+        --spacing-2xl: 24px;
+        --font-lg: 18px;
+        --font-xl: 18px;
+        --font-2xl: 24px;
+        --font-base: 14px;
+    }
+
+    body {
+        font-size: var(--font-base);
+    }
+
+    .main-wrapper {
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .header-banner {
+        padding: var(--spacing-lg) var(--spacing-md);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        width: 100%;
+    }
+
+    body {
+        padding-top: 180px;
+    }
+
+    .header-logo h1 {
+        font-size: var(--font-lg);
+        letter-spacing: 1px;
+    }
+
+    .header-tagline {
+        font-size: var(--font-xs);
+        margin-top: var(--spacing-xs);
+    }
+
+    .header-logo {
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .logo-icon {
+        font-size: var(--font-xl);
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* QR Panel */
+    .qr-panel,
+    .control-panel {
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-lg);
+    }
+
+    .qr-display-wrapper {
+        min-height: 250px;
+        padding: var(--spacing-md);
+    }
+
+    .qr-display-wrapper.generating {
+        min-height: 300px;
+    }
+
+    /* Floating Actions */
+    .floating-actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .action-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-sm);
+    }
+
+    .btn-icon {
+        font-size: var(--font-lg);
+    }
+
+    /* Share Section */
+    .share-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .share-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-base);
+    }
+
+    /* Control Panel */
+    .control-section {
+        gap: var(--spacing-md);
+    }
+
+    .control-section label {
+        font-size: var(--font-xs);
+    }
+
+    .input-type-tabs {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-xs);
+    }
+
+    .tab-btn {
+        padding: var(--spacing-sm) var(--spacing-xs);
+        font-size: var(--font-xs);
+        gap: var(--spacing-xs);
+    }
+
+    .tab-btn span {
+        display: inline;
+        font-size: var(--font-base);
+    }
+
+    .tab-btn:not(.active) span {
+        display: none;
+    }
+
+    /* Input Fields */
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    textarea {
+        padding: var(--spacing-md);
+        font-size: var(--font-base);
+    }
+
+    /* Size Control */
+    .size-presets {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .preset-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-sm);
+    }
+
+    /* Error Correction */
+    .error-correction-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .error-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-xs);
+    }
+
+    .error-btn span {
+        font-size: var(--font-base);
+    }
+
+    .error-btn small {
+        font-size: var(--font-xs);
+    }
+
+    /* Color Grid */
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .color-input-group {
+        gap: var(--spacing-sm);
+    }
+
+    input[type="color"] {
+        height: 45px;
+    }
+
+    /* History Gallery */
+    .history-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: var(--spacing-md);
+        min-height: auto;
+    }
+
+    .history-item {
+        padding: var(--spacing-md);
+    }
+
+    .history-item-qr {
+        width: 70px;
+        height: 70px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .history-item-text {
+        font-size: var(--font-xs);
+    }
+
+    /* Buttons */
+    .primary-btn,
+    .secondary-btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-sm);
+        width: 100%;
+    }
+
+    .primary-btn {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Notifications */
+    .notification-container {
+        top: auto;
+        bottom: var(--spacing-lg);
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+        max-width: none;
+    }
+
+    .notification {
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .notification-message {
+        font-size: var(--font-sm);
+    }
+}
+
+/* ============================================
+   SMALL PHONES (< 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-md: 12px;
+        --spacing-lg: 12px;
+        --spacing-xl: 12px;
+        --spacing-2xl: 16px;
+        --font-base: 13px;
+        --font-sm: 12px;
+        --font-lg: 16px;
+    }
+
+    .header-banner {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    body {
+        padding-top: 160px;
+    }
+
+    .header-logo h1 {
+        font-size: var(--font-base);
+        letter-spacing: 0.5px;
+    }
+
+    .header-tagline {
+        font-size: var(--font-xs);
+    }
+
+    .header-decorative {
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+    }
+
+    .pulse-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: var(--font-base);
+    }
+
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .content-wrapper {
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .qr-panel,
+    .control-panel {
+        padding: var(--spacing-lg);
+    }
+
+    .qr-display-wrapper {
+        min-height: 220px;
+        padding: var(--spacing-md);
+    }
+
+    .floating-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .action-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-xs);
+    }
+
+    .btn-label {
+        display: none;
+    }
+
+    .share-title {
+        font-size: var(--font-xs);
+    }
+
+    .share-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .share-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-base);
+    }
+
+    .input-type-tabs {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-xs);
+    }
+
+    .tab-btn {
+        padding: var(--spacing-sm) var(--spacing-xs);
+        font-size: var(--font-xs);
+    }
+
+    .tab-btn span:last-child {
+        display: none;
+    }
+
+    .tab-btn.active span:last-child {
+        display: inline;
+    }
+
+    .control-section label {
+        font-size: var(--font-xs);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    textarea {
+        padding: var(--spacing-md);
+        font-size: var(--font-base);
+    }
+
+    .size-presets,
+    .error-correction-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xs);
+    }
+
+    .preset-btn,
+    .error-btn {
+        padding: var(--spacing-md);
+        font-size: var(--font-xs);
+    }
+
+    .error-btn span {
+        font-size: var(--font-sm);
+    }
+
+    .color-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    input[type="color"] {
+        height: 40px;
+    }
+
+    .history-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .history-item-qr {
+        width: 60px;
+        height: 60px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-sm);
+    }
+
+    .notification-container {
+        top: 80px;
+        bottom: auto;
+    }
+
+    .notification {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* ============================================
+   LANDSCAPE MODE
+   ============================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .header-banner {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    body {
+        padding-top: 80px;
+    }
+
+    .qr-display-wrapper {
+        min-height: 200px;
+    }
+
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .content-wrapper {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    textarea {
+        font-size: 16px;
+        padding: var(--spacing-md);
+    }
+
+    .share-btn {
+        min-height: 48px;
+    }
+
+    .action-btn {
+        min-height: 48px;
+    }
+}
+
+/* ============================================
+   HIGH DPI SCREEN OPTIMIZATION
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .animated-grid {
+        background-size: 100px 100px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .header-banner,
+    .control-panel,
+    .floating-actions,
+    .share-section,
+    .header-controls,
+    .history-section {
+        display: none;
+    }
+
+    .qr-display-wrapper {
+        border: 2px solid black;
+        page-break-inside: avoid;
+    }
+
+    .qr-display {
+        width: 100%;
+    }
+}

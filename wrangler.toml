@@ -1,0 +1,19 @@
+name = "qr-sys32-lt"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[env.production]
+name = "qr-sys32-lt"
+route = "qr.sys32.lt/*"
+
+[build]
+command = ""
+cwd = "./"
+watch_paths = []
+
+[build.upload]
+format = "modules"
+main = ""

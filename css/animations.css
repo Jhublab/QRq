@@ -1,0 +1,432 @@
+/* ============================================
+   ANIMATIONS - Smooth Transitions & Effects
+   ============================================ */
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+        box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 255, 136, 0.8),
+                     0 0 30px rgba(0, 136, 255, 0.5);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.8),
+                     0 0 20px rgba(0, 255, 136, 0.6),
+                     0 0 30px rgba(0, 255, 136, 0.4);
+    }
+    5% {
+        text-shadow: none;
+    }
+    10% {
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.8),
+                     0 0 20px rgba(0, 255, 136, 0.6),
+                     0 0 30px rgba(0, 255, 136, 0.4);
+    }
+    15% {
+        text-shadow: none;
+    }
+    20% {
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.8),
+                     0 0 20px rgba(0, 255, 136, 0.6),
+                     0 0 30px rgba(0, 255, 136, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.8),
+                     0 0 20px rgba(0, 255, 136, 0.6),
+                     0 0 30px rgba(0, 255, 136, 0.4);
+    }
+}
+
+@keyframes colorShift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(30deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateInY {
+    from {
+        transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   APPLY ANIMATIONS
+   ============================================ */
+
+/* Page Load Animation */
+body {
+    animation: fadeIn 600ms ease-out;
+}
+
+.header-banner {
+    animation: slideInDown 500ms ease-out;
+}
+
+.container {
+    animation: slideInUp 600ms ease-out;
+}
+
+/* QR Display Animation */
+#qrDisplay {
+    animation: scaleIn 400ms ease-out;
+}
+
+.qr-display-wrapper.generating {
+    animation: pulse 1s ease-in-out;
+}
+
+/* Button Hover Effects - Ripple */
+.primary-btn::before,
+.action-btn::before,
+.share-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+}
+
+.primary-btn:active::before,
+.action-btn:active:not(:disabled)::before,
+.share-btn:active:not(:disabled)::before {
+    animation: ripple 600ms ease-out;
+}
+
+/* Tab Button Animation */
+.tab-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.tab-btn:hover::after,
+.tab-btn.active::after {
+    width: 100%;
+}
+
+/* History Item Animation */
+.history-item {
+    animation: slideInUp 400ms ease-out;
+    animation-fill-mode: both;
+}
+
+.history-item:nth-child(1) { animation-delay: 0ms; }
+.history-item:nth-child(2) { animation-delay: 50ms; }
+.history-item:nth-child(3) { animation-delay: 100ms; }
+.history-item:nth-child(4) { animation-delay: 150ms; }
+.history-item:nth-child(5) { animation-delay: 200ms; }
+.history-item:nth-child(n+6) { animation-delay: 250ms; }
+
+/* QR Generation Animation */
+.qr-generating {
+    animation: colorShift 1s ease-in-out;
+}
+
+/* Input Focus Animation */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    animation: slideInDown 300ms ease-out;
+}
+
+/* Notification Animation */
+.notification {
+    animation: slideIn var(--transition-normal) ease-out forwards;
+}
+
+.notification.removing {
+    animation: slideOut var(--transition-normal) ease-in forwards;
+}
+
+/* Control Section Animation */
+.control-section {
+    animation: fadeIn 400ms ease-out;
+}
+
+.control-section:nth-child(1) { animation-delay: 0ms; }
+.control-section:nth-child(2) { animation-delay: 50ms; }
+.control-section:nth-child(3) { animation-delay: 100ms; }
+.control-section:nth-child(4) { animation-delay: 150ms; }
+.control-section:nth-child(5) { animation-delay: 200ms; }
+.control-section:nth-child(6) { animation-delay: 250ms; }
+
+/* Hover Scale Animation */
+.action-btn:not(:disabled):hover,
+.history-item:hover,
+.share-btn:not(:disabled):hover {
+    animation: none;
+}
+
+/* Loading Spinner Animation */
+@keyframes spin-loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin-loader 1s linear infinite;
+}
+
+/* Theme Toggle Animation */
+.theme-toggle:active {
+    animation: rotateInY 400ms ease-out;
+}
+
+/* ============================================
+   MICRO-INTERACTIONS
+   ============================================ */
+
+/* Button Press Animation */
+button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* Smooth Color Transitions */
+input[type="color"] {
+    transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+/* Smooth Text Transitions */
+.text-primary,
+.text-secondary {
+    transition: color var(--transition-normal);
+}
+
+/* Glow Effect Animation */
+.glow-effect {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   DISABLED STATE ANIMATIONS
+   ============================================ */
+
+button:disabled {
+    animation: none;
+}
+
+/* ============================================
+   DARK TO LIGHT MODE TRANSITION
+   ============================================ */
+
+body.light-mode {
+    animation: fadeIn 300ms ease-out;
+}
+
+body.light-mode input[type="text"],
+body.light-mode input[type="email"],
+body.light-mode input[type="url"],
+body.light-mode input[type="tel"],
+body.light-mode textarea {
+    animation: fadeIn 300ms ease-out;
+}
+
+/* ============================================
+   RESPONSIVE ANIMATION ADJUSTMENTS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   LOADING ANIMATION
+   ============================================ */
+
+.qr-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin-loader 1s linear infinite;
+}
+
+/* ============================================
+   SUCCESS ANIMATION
+   ============================================ */
+
+@keyframes checkmark {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+    100% {
+        stroke-dasharray: 100 0;
+    }
+}
+
+.success-icon {
+    stroke-dasharray: 100;
+    animation: checkmark 600ms ease-out forwards;
+}

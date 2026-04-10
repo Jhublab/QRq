@@ -1,0 +1,5 @@
+/* Redirect all requests to index.html for SPA routing */
+/* Keep this at the end of the file */
+/static/* 200
+/assets/* 200
+/* /index.html 200
